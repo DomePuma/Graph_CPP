@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -pedantic -std=c++17 -rdynamic CMakeFiles/tp.dir/src/algo.cpp.o CMakeFiles/tp.dir/src/main.cpp.o CMakeFiles/tp.dir/src/utils.cpp.o -o tp 
