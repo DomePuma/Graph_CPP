@@ -4,8 +4,12 @@
 namespace graph::utils
 {
     void GenerateRandomGraph(int n, int m, int edges[][2]);
+    
     void DisplayEdgeMatrix(int m, int edges[][2]);
+    
     void DisplayCompMatrix(int n, int comp[]);
+
+    void DisplayComponentSizes(int n, int m, int comp[]);
 };
 
 #endif //_UTILS_HPP_

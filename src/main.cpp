@@ -33,5 +33,7 @@ int main()
     GraphUtils::DisplayEdgeMatrix(m, edges);
     GraphUtils::DisplayCompMatrix(n, comp);
 
+    GraphUtils::DisplayComponentSizes(n, m, comp);
+
     return 0;
 }

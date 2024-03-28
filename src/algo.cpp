@@ -6,14 +6,14 @@ namespace graph::algo
     {
         for(int i = 0; i < n; i++)
         {
-            comp[i] = edges[i][0];
+            comp[i] = i;
         }
         for(int j = 0; j < m; j++)
         {
             if(comp[edges[j][0]] != comp[edges[j][1]])
             {
                 int aux = comp[edges[j][0]];
-                for(int k; k < n; k++)
+                for(int k = 0; k < n; k++)
                 {
                     if(comp[k] == aux)
                     {
