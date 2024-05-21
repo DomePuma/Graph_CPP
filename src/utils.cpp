@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 
 namespace graph::utils
 {
@@ -77,5 +78,35 @@ namespace graph::utils
                 }
             }
         }
+    }
+
+    void ExportTreeInPSFormat(int n, graph::algo::Point2D points[], int tree[][2], char* name)
+    {       
+        // Cree le fichier Exemple.ps qui affiche
+        // les points et l'arbre de Kruskal.
+
+        std::ofstream output;                           
+        output.open(name,std::ios::out);
+        output << "%!PS-Adobe-3.0" << std::endl;
+        output << "%%BoundingBox: 0 0 612 792" << std::endl;
+        output << std::endl;  
+        for(int i=0;i<n;i++){
+            output << points[i].abs << " " << points[i].ord << " 3 0 360 arc" << std::endl;
+            output << "0 setgray" << std::endl;
+            output << "fill" << std::endl;
+            output << "stroke"<< std::endl;
+            output << std::endl;
+        }
+        output << std::endl;
+        for(int i = 0; i < n - 1; ++i){
+            output << points[tree[i][0]].abs << " " << points[tree[i][0]].ord 
+        << " moveto" << std::endl;
+            output << points[tree[i][1]].abs << " " << points[tree[i][1]].ord
+        << " lineto" << std::endl;
+            output << "stroke" << std::endl;
+            output << std::endl;
+        }
+        output << "showpage";
+        output << std::endl;
     }
 }
